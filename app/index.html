@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>To do</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>To do</h1>
+      <p>Manage your work with ease</p>
+    </div>
+    <div class="create-task">
+      <button onclick="addtask()">Add Task</button>
+      <div class="modal">
+        <span class="close" onclick="closetask()">&times;</span><br>
+        <div class="modal-elements">
+          <input type="text" name="task-name" value="new task"><br><br>
+          <label for="priority">Priority of task :</label>&nbsp;
+          <select name="priority" id="priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <br><br>&nbsp;
+        <button onclick="create_task()">Add task</button>
+        </div>
+      </div>
+    </div>
+    <div id="tasks_area">
+
+    </div>
+  </body>
+</html>

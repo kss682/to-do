@@ -1,0 +1,45 @@
+.header{
+    text-align: center;
+}
+
+.modal{
+    text-align: center;
+    margin: auto;
+    margin-top: 2em;
+    padding-bottom: 2em;
+    display: none;
+    height: 50%;
+    width: 50%;
+    z-index: 1;
+    border-style: double;
+    border-radius: 5%;
+    background-color: cornflowerblue;
+}
+
+.create-task{
+    text-align: center;
+}
+
+.close{
+    color: grey;
+    float: right;
+    padding-right: 1em;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus{
+    color: black;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+#tasks{
+    text-align: center;
+    flex-direction: column;
+}
+
+#task{
+    text-align: center;
+}
