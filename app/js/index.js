@@ -1,3 +1,4 @@
+`use strict`
 var task_id = 0;
 
 function create_task_area(task, priority_value){
@@ -20,13 +21,17 @@ function create_task_area(task, priority_value){
 
 function create_task(){
   task_id = task_id + 1;
-  task = document.getElementsByTagName("input").value;
+  task = document.getElementById("input").value
   priority = document.getElementById("priority");
   priority_value = priority.options[priority.selectedIndex].value;
-  //task_ = create_task_area(task, priority_value);
-  task_ = "<div id='task'>" + task + "</div>"
-  task_area = document.getElementById("task_area");
-  task_area.appendChild(task_)
+  task_ = create_task_area(task, priority_value);
+  new_div = document.createElement("div");
+  new_div.innerHTML = task
+  new_div.id = "task"
+  //task_ = task + priority + "\n";
+  //task_area = document.getElementById("task_area");
+  //task_area.appendChild(new_div);
+  document.body.appendChild(new_div);
 }
 
 function addtask(){

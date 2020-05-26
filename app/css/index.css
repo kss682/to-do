@@ -41,5 +41,12 @@
 }
 
 #task{
+    margin: auto;
+    margin-top: 2em;
     text-align: center;
+    border-color: grey;
+    border-radius: 5%;
+    height: 50%;
+    width: 25%;
+    border-style: groove;
 }
