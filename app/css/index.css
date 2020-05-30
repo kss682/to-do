@@ -40,13 +40,22 @@
     flex-direction: column;
 }
 
-#task{
+.task{
     margin: auto;
-    margin-top: 2em;
-    text-align: center;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    text-align: left;
+    float: none;
     border-color: grey;
     border-radius: 5%;
     height: 50%;
     width: 25%;
     border-style: groove;
+    overflow: scroll;
+}
+
+.trash{
+    position: fixed;
+    margin-right: 0.5em;
+    float: right;
 }

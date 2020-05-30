@@ -16,22 +16,31 @@ function create_task_area(task, priority_value){
     task_.style.backgroundcolor = "green";
   }
   task_.style.height = "100%";
-  return task_
+  return task_;
 }
 
 function create_task(){
   task_id = task_id + 1;
+
   task = document.getElementById("input").value
   priority = document.getElementById("priority");
   priority_value = priority.options[priority.selectedIndex].value;
   task_ = create_task_area(task, priority_value);
+
+  //trash can adding
+  trash_can = document.createElement("i");
+  trash_can.className = "fa fa-trash-o trash";
+
+  // creating new div for task
   new_div = document.createElement("div");
-  new_div.innerHTML = task
-  new_div.id = "task"
-  //task_ = task + priority + "\n";
-  //task_area = document.getElementById("task_area");
-  //task_area.appendChild(new_div);
+  //new_div.appendChild(trash_can);
+  new_div.innerHTML = task;
+  new_div.className = "task ";
+  new_div.id = task_id;
   document.body.appendChild(new_div);
+
+  document.getElementById(task_id).appendChild(trash_can);
+  
 }
 
 function addtask(){
