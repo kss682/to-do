@@ -19,6 +19,14 @@ function create_task_area(task, priority_value){
   return task_;
 }
 
+function delete_task(trash_className){
+  trash_can = document.getElementsByClassName(trash_className)[0];
+  task_div = trash_can.parentNode;
+  task_div.remove();
+  task_id = task_id - 1;
+}
+
+
 function create_task(){
   task_id = task_id + 1;
 
@@ -26,10 +34,6 @@ function create_task(){
   priority = document.getElementById("priority");
   priority_value = priority.options[priority.selectedIndex].value;
   task_ = create_task_area(task, priority_value);
-
-  //trash can adding
-  trash_can = document.createElement("i");
-  trash_can.className = "fa fa-trash-o trash";
 
   // creating new div for task
   new_div = document.createElement("div");
@@ -39,9 +43,14 @@ function create_task(){
   new_div.id = task_id;
   document.body.appendChild(new_div);
 
-  document.getElementById(task_id).appendChild(trash_can);
+  //trash can adding
+  trash_can = document.createElement("i");
+  trash_can.className = "fa fa-trash-o trash " + task_id;
+  trash_can.setAttribute("onclick","delete_task(this.className)")
   
+  document.getElementById(task_id).appendChild(trash_can);
 }
+
 
 function addtask(){
   modal = document.getElementsByClassName("modal")[0];
