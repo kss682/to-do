@@ -1,22 +1,18 @@
 `use strict`
 var task_id = 0;
 
-function create_task_area(task, priority_value){
-  task_ = document.createElement("div");
-  task_.setAttribute("id","task")
-  new_task = document.createTextNode(task);
-  task_.appendChild(new_task);
+function choose_color(priority_value){
+  var bgc = ""
   if(priority_value == "high"){
-    task_.style.backgroundcolor = "red";
+    bgc = "red";
   }
   else if(priority_value == "medium"){
-    task_.style.backgroundcolor = "orange";
+    bgc = "orange";
   }
   else{
-    task_.style.backgroundcolor = "green";
+    bgc = "green";
   }
-  task_.style.height = "100%";
-  return task_;
+  return bgc;
 }
 
 function delete_task(trash_className){
@@ -32,14 +28,15 @@ function create_task(){
   task = document.getElementById("input").value
   priority = document.getElementById("priority");
   priority_value = priority.options[priority.selectedIndex].value;
-  task_ = create_task_area(task, priority_value);
-
+  color = choose_color(priority_value);
+  console.log(color);
   // creating new div for task
   new_div = document.createElement("div");
   //new_div.appendChild(trash_can);
   new_div.innerHTML = task;
   new_div.className = "task ";
   new_div.id = task_id;
+  new_div.style.backgroundColor = color;
   document.body.appendChild(new_div);
 
   //trash can adding
