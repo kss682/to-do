@@ -23,7 +23,6 @@ function delete_task(trash_className){
   trash_can = document.getElementsByClassName(trash_className)[0];
   task_div = trash_can.parentNode;
   task_div.remove();
-  task_id = task_id - 1;
 }
 
 

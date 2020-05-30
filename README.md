@@ -2,7 +2,6 @@
 Trying to create a desktop application
 
 ## Next on list
-- task_id not managed correctly
 - color the task based on priority.
 
 
